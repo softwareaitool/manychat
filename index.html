@@ -252,28 +252,6 @@
     </footer>
 
 
-    <script>
-        // small interactive touches
-        document.getElementById('year').textContent = new Date().getFullYear();
-
-        // Fix: if href="#" then redirect to tracking link (so logo/title clicks work)
-        const fallbackClickUrl = "https://inpmz.ttrk.io/click";
-
-        document.querySelectorAll('a[href="https://inpmz.ttrk.io/click"]').forEach(a => {
-            a.addEventListener('click', (e) => {
-                e.preventDefault();
-
-                // Support opening in new tab (Ctrl/Cmd click)
-                if (e.ctrlKey || e.metaKey) {
-                    window.open(fallbackClickUrl, "_blank", "noopener,noreferrer");
-                    return;
-                }
-
-                window.location.href = fallbackClickUrl;
-            });
-        });
-    </script>
-
 </body>
 
 </html>
